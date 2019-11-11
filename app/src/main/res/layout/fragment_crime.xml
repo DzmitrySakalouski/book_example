@@ -1,20 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragment_containe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="?android:listSeparatorTextViewStyle"
-        android:text="@string/crime_title_label" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/crime_title_hint"
-        android:id="@+id/crime_title" />
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="89dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="?android:listSeparatorTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/crime_title_label" />
+
+            <EditText
+                android:id="@+id/crime_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/crime_title_hint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/crime_photo"
+                android:layout_width="86dp"
+                android:layout_height="80dp"
+                android:background="@android:color/darker_gray"
+                android:cropToPadding="true"
+                android:scaleType="centerInside" />
+
+            <ImageButton
+                android:id="@+id/crime_camera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_camera" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

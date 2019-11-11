@@ -64,5 +64,9 @@ public class Crime {
     public boolean isSolved() {
         return mSolved;
     }
+
+    public String getPhotoFilename() {
+        return "IMG_" + getId().toString() + ".jpg";
+    }
 }
 

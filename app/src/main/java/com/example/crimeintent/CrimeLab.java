@@ -7,6 +7,7 @@ import android.database.CursorWrapper;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -103,5 +104,10 @@ public class CrimeLab {
         );
 
         return new CrimeCursorWrapper(cursor);
+    }
+
+    public File getPhotoFile(Crime crime) {
+        File fileDir = mContext.getFilesDir();
+        return new File(fileDir, crime.getPhotoFilename());
     }
 }
