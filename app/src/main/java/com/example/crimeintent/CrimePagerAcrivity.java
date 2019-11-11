@@ -34,7 +34,7 @@ public class CrimePagerAcrivity extends AppCompatActivity {
 
         mViewPager = (ViewPager) findViewById(R.id.crime_view_pager);
 
-        mCrimes = CrimeLab.get().getCrimes();
+        mCrimes = CrimeLab.get(this).getCrimes();
         FragmentManager fragmentManager = getSupportFragmentManager();
         mViewPager.setAdapter(new FragmentStatePagerAdapter(fragmentManager) {
             @Override
